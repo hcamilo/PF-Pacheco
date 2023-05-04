@@ -1,0 +1,461 @@
+body{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    margin: 0;
+}
+
+html{
+  box-sizing: border-box;
+     scroll-snap-type: y mandatory;
+}
+
+/*VARIABLES (exclusivas de SCSS)*/
+$color-verdeOscuro: #06290e;
+$color-oscuro: #000000;
+$color-verdeClaro: #f3faea;
+
+
+/* GLOBALES */
+a{
+  text-decoration: none;
+  color: $color-oscuro;
+}
+
+a:hover, a:active {
+  color: yellowgreen;
+}
+
+p{
+  margin-left: 10px;
+}
+
+h1, h2, h3{
+  margin-left: 10px;
+  color: $color-verdeOscuro;
+  font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+
+}
+
+
+
+.titulo{
+  color: $color-verdeOscuro;
+  font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  font-size: 50px;
+  font-weight: bold;
+  text-align: center;
+}
+
+@media (max-width: 576px) {
+  .titulo{
+    font-size: 25px;
+  }
+}
+
+/* ENCABEZADO Y NAVEGACION */
+
+header{
+    background-image: url(/imgs/ten-560-c-resize-1400x335_verde.png);
+    background-size: cover;
+    width: 100%;
+    height: 355px;
+    display: flex;
+    justify-content:space-between;
+    align-items: center;
+}
+
+@media (max-width: 576px) {
+    header{
+      height: fit-content;
+      display: flex;
+      flex-direction: column;
+    }
+}
+
+.logo-principal{
+  width: 460px;
+  height: 174px;
+  backdrop-filter: 2px;
+  margin-left: 50px;
+}
+
+@media (max-width: 576px) {
+  .logo-principal{
+    width: 230px;
+    height: 87px;
+    backdrop-filter: 2px;
+    margin-left: 0;
+  }
+}
+
+
+.navegacion{
+  margin-right: 50px;
+  padding: 5px;
+  text-align: center;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 30px;
+    a{
+        backdrop-filter: blur(2px);
+        color: whitesmoke;
+        padding: 2px;
+            &:hover{
+                color: yellowgreen;
+            }
+    }
+}
+
+@media (max-width: 576px) {
+    .navegacion{
+      height: 150px;
+      display: flex;
+      flex-direction: column;
+      row-gap: 10px;
+      margin-right: 0;
+    }
+}
+
+.navegacion__enlace {
+  color: $color-verdeOscuro;
+  font-weight: bold;
+  text-decoration: none; 
+}
+
+/* INDEX.HTML CONTENEDOR PRINCIPAL */
+
+.izquierda, .derecha{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 30px;
+  
+}
+
+.grilla-contenido{
+  background-color: $color-verdeClaro;
+  height: 330px;
+  padding-top: 10px;
+  display: flex;
+  text-align: center;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+
+
+.imgGrilla{
+  margin-right: 10px;
+  height: 150px;
+  width: 250px;
+  filter: grayscale(0.25);
+  transition: height 1s, width 1s, filter 1s;
+    &:hover{
+      filter: none;
+      height: 210;
+      width: 350;
+    }
+    &:focus{
+      filter: none;
+      height: 210;
+      width: 350;
+    }
+    &:active{
+      filter: none;
+      height: 210;
+      width: 350;
+    }
+  }
+
+  @media (max-width: 576px) {
+    .imgGrilla{
+      filter: none;
+    }
+}
+
+
+
+/* FOOTER */
+footer{
+    display: flex;
+    flex-direction: column;
+    background-image: url(/imgs/banner_footer_verde.png);
+    background-size: cover;
+    width: 100%;
+    height: fit-content;
+    font-weight: bold;
+    text-align: center;
+    align-items: center;
+        .infoMapa{ /*PRUEBA DE ANIDACION*/
+            color: $color-oscuro;
+            font-size: small;   
+        }
+}
+
+.mapa-direccion{
+  display: flex;
+  margin-top: 10px;
+  margin-left: 500px;
+  width: 550px;
+  height: 220;
+  background-color: whitesmoke;
+  box-shadow: 0px 0px 0px 2.5px rgba(0,0,0,0.51);
+  padding-top: 10px;
+  padding-left: 10px;
+      span{
+        font-size:x-large;
+        color: $color-oscuro;
+      }
+}
+
+@media (max-width: 576px) {
+  .mapa-direccion{
+    margin-left: 0;
+    width: 85%;
+    height: fit-content;
+  }
+}
+
+@media (max-width: 1100px) {
+  .mapa-direccion{
+    margin-left: 0;
+  }
+}
+
+@media (max-width: 576px) {
+  .mapa{
+    width: 100px;
+    height: 75%;
+
+  }
+}
+
+
+.footer-social-icons{
+  display: flex;
+  backdrop-filter: blur(3px);
+  margin-top: 20px;
+  margin-left: 775px;
+    ul{
+      display: flex;
+      gap: 10px;
+      list-style-type: none;
+    }
+    h4{
+      color: $color-oscuro;
+      font-family: Verdana, Geneva, Tahoma, sans-serif;
+    }
+}
+
+@media (max-width: 1100px) {
+  .footer-social-icons{
+    margin-left: 0;
+  }
+}
+
+
+/*ESTILO DE BOTON DE WHATSAPP*/
+.whatsapp {
+  position:fixed;
+  width:60px;
+  height:60px;
+  bottom:20px;
+  right:20px;
+  background-color:#25d366;
+  color:#FFF;
+  border-radius:50px;
+  text-align:center;
+  font-size:40px;
+  z-index:100;
+}
+
+.whatsapp-icon {
+  margin-top:10px;
+}
+
+/*ESTILOS PARA LAS SECCIONES E IMAGENES DE LA PAGINA BLOG Y NOTICIAS*/
+
+.blog{
+  margin-left: 10px;
+  display: flex;
+  flex-direction: column;
+    p{
+      margin-left: 10px;
+      margin-right: 40%;
+
+    }
+    img{
+      height: 300px;
+      width: 500px;
+      margin-left: 10px;
+    }
+}
+
+   @media (max-width: 768px) {
+  .blog p{
+    margin-right: 10px;
+  }
+}
+
+@media (max-width: 576px) {
+  .blog img{
+    height: 180px;
+    width: 300px;
+  }
+}
+
+/*ESTILO PARA TABLA DE PLANES*/
+
+.tabla_planes {
+  display: grid;
+  border: $color-verdeOscuro solid 2px;
+  grid-template-columns: repeat(5, 1fr);
+  grid-template-rows: 50px 100px 100px 100px;
+  gap: 2px;
+  margin-bottom: 100px;
+  margin-top: 100px;
+}
+
+.celda_planes {
+  background-color: $color-verdeClaro;
+  border: $color-verdeOscuro solid 1px;
+  padding: 5px;
+  font-size: 15px;
+  text-align: center;
+  align-items: center;
+}
+
+.celda_titulo{
+  font-weight: bold;
+  background-color: $color-verdeOscuro;
+  color: $color-verdeClaro;
+  font-size: 20px;
+  padding: 5px;
+}
+
+/*ESTILO PARA PROFESORES*/
+
+
+    .tarjetas_profesores{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content:space-around ;
+  gap: 10px;
+  margin-bottom: 100px;
+}
+
+@media (max-width: 576px) {
+  .tarjetas_profesores{
+    gap: 50px;
+  }
+}
+
+.btn-primary{
+  background-color: $color-verdeOscuro;
+  border: $color-verdeClaro 2px solid;
+    &:hover{
+      background-color: yellowgreen;
+      border: yellowgreen;
+    }
+}
+
+/* ESTILOS PARA INSTALACIONES (GALERIA DE FOTOS)*/
+
+.titulo_instalaciones{
+  margin-left: 80px;
+}
+
+
+/* Aqui empieza estilo solo del formulario de contacto */
+
+  .contact_form{	
+    width: 460px; 
+    height: auto;
+    margin: 20px auto;
+    border-radius: 10px;  
+    padding-top: 30px;
+    padding-bottom: 20px;  
+    background-color: #fbfbfb; 
+    padding-left: 30px; 
+  }
+  
+  input{
+    background-color: #fbfbfb; 
+    width: 408px; 
+    height: 40px; 
+    border-radius: 5px;  
+    border-style: solid; 
+    border-width: 1px; 
+    border-color: $color-verdeOscuro; 
+    margin-top: 10px;  
+    padding-left: 10px;
+    margin-bottom: 20px; 
+  }
+  
+  textarea{
+    background-color: #fbfbfb; 
+    width: 405px; 
+    height: 150px; 
+    border-radius: 5px;  
+    border-style: solid; 
+    border-width: 1px; 
+    border-color: $color-verdeOscuro; 
+    margin-top: 10px;  
+    padding-left: 10px;
+    margin-bottom: 20px; 
+    padding-top: 15px; 
+  }
+  
+  label{
+    display: block; 
+    float: center; 	
+  }
+  
+  button{
+    height: 45px; 
+    padding-left: 5px;
+    padding-right: 5px; 	
+    margin-bottom: 20px; 
+    margin-top: 10px; 	
+    text-transform: uppercase;
+    background-color: $color-verdeOscuro; 
+    border-color: $color-verdeOscuro; 
+    border-style: solid; 
+    border-radius: 10px;	
+    width: 420px;   
+    cursor: pointer;
+  }
+  
+  button p{
+    color: #fff; 
+  }
+  
+  span{
+    color: $color-verdeOscuro; 
+  }
+  
+  .aviso{
+    font-size: 13px;  
+    color: #0e0e0e;  
+  }
+  
+  ::-webkit-input-placeholder {
+   color: #a8a8a8;
+  }
+  
+  ::-webkit-textarea-placeholder {
+   color: #a8a8a8;
+  }
+  
+  .formulario input:focus{
+    outline:0;
+    border: 1px solid #97d848;
+  }
+  
+  .formulario textarea:focus{
+    outline:0;
+    border: 1px solid #97d848;
+  }
+
+  /* Termina estilo de formulario de contacto */
